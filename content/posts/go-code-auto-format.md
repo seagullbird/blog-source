@@ -34,7 +34,7 @@ This brings up a problem, which is the `vendor` folder. Normally we would not wa
 So to ignore the `vendor` folder, here's a workaround:
 
 ```shell
-$ gofmt -w $(go list -f '{{.Name}}' ./...)
+$ gofmt -w $(go list -f '{{.Dir}}' ./...)
 ```
 
 Note that `go list`:
@@ -54,7 +54,7 @@ Note that `go list`:
 
 And:
 
-> Name          string // package name
+> Dir           string 	// directory containing package sources
 
 Starting from Go1.9, `vendor` directory is automatically excluded when running `go list ./...`.
 
