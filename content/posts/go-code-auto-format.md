@@ -31,34 +31,11 @@ in a project directory, this will exanmine all codes in the directory and format
 
 This brings up a problem, which is the `vendor` folder. Normally we would not want to format codes in the `vendor` directory, because those codes are not written by ourselves, plus they're always under version control.
 
-So to ignore the `vendor` folder, here's a workaround:
+So to ignore the `vendor` folder:
 
 ```shell
-$ gofmt -w $(go list -f '{{.Dir}}' ./...)
+$ gofmt -w -l $(find . -type f -name '*.go' -not -path "./vendor/*")
 ```
-
-Note that `go list`:
-
-> List lists the packages named by the import paths, one per line.
->
-> The default output shows the package import path:
->
-> ​	bytes
-> ​	encoding/json
-> ​	github.com/gorilla/mux
-> ​	golang.org/x/net/html
->
-> The -f flag specifies an alternate format for the list, using the
-> syntax of package template. The default output is equivalent to -f
-> '{{.ImportPath}}'.
-
-And:
-
-> Dir           string 	// directory containing package sources
-
-Starting from Go1.9, `vendor` directory is automatically excluded when running `go list ./...`.
-
-So, here we're actually listing all go codes of **this** project and formatting them using `gofmt`.
 
 # git pre-commit hook
 
@@ -88,7 +65,7 @@ and write:
 
 ```bash
 echo "\033[0;32mFormatted code files:\033[0m"
-gofmt -w -l $(go list  -f '{{.Name}}' ./...)
+gofmt -w -l $(find . -type f -name '*.go' -not -path "./vendor/*")
 git add .
 ```
 
