@@ -31,10 +31,10 @@ in a project directory, this will exanmine all codes in the directory and format
 
 This brings up a problem, which is the `vendor` folder. Normally we would not want to format codes in the `vendor` directory, because those codes are not written by ourselves, plus they're always under version control.
 
-So to ignore the `vendor` folder:
+So to ignore the `vendor` folder (as well as hidden files and directories, aka. ".files"):
 
 ```shell
-$ gofmt -w -l $(find . -type f -name '*.go' -not -path "./vendor/*")
+$ gofmt -w -l $(find . -type f -name '*.go' -not -path "./vendor/*" -not -path "*/\.*")
 ```
 
 # git pre-commit hook
@@ -65,7 +65,7 @@ and write:
 
 ```bash
 echo "\033[0;32mFormatted code files:\033[0m"
-gofmt -w -l $(find . -type f -name '*.go' -not -path "./vendor/*")
+gofmt -w -l $(find . -type f -name '*.go' -not -path "./vendor/*" -not -path "*/\.*")
 git add .
 ```
 
