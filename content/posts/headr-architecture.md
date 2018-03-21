@@ -13,3 +13,4 @@ The second post about Headr. This time I talk about the architecture design of H
 
 That's it. That's Headr's architecture.
 
+To be continued…
