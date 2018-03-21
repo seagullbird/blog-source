@@ -11,6 +11,6 @@ The second post about Headr. This time I talk about the architecture design of H
 
 ![](/images/headr-architecture-architecture.png)
 
-That's it. That's Headr's architecture.
+That's it. That's Headr's architecture (version zero).
 
 To be continued…
