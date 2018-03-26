@@ -19,7 +19,7 @@ The picture above shows the current implemented architecture of Headr. Every par
 
 The whole backend consists of 3 main microservices (`repoctl`, `sitemgr` and `contentmgr`), 2 helpers (`hugo-helper` and `k8s-helper`) and 1 api gateway (`apigateway`). Third party services including RabbitMQ as the message queue and PostgresSQL as the database server. The backend is deployed in a Kubernetes cluster (currently it's just minikube on my local machine). A persistent volume is mounted on the Kubernetes cluster, and is used by the `repoctl` microservice, the `hugo-helper` and all the user site servers (I will talk about this part in details later). I wrote the fontend Single Page Application (SPA) with Vue.js. [Auth0](https://auth0.com/) is a third party authentication provider, I use it to save my work of user management and their authentication/authorization (I should write another post about this part!!!).
 
-### Components
+# Components
 
 Given the big picture, now I explain how Headr works. 
 
@@ -49,6 +49,6 @@ The apigateway gathers the gRPC interfaces of `contentmgr` and `sitemgr` togethe
 
 Apart from the introduction home page, the main component of the Headr frontend is the Headr dashboard. The Headr dashboard is the admin panel where users can manage their sites, their posts, configurations and everything else. The frontend needs a login action first, in which it redirects the user to the login page of Auth0, gaining authorization of user information after the login. An `access_token` is obtained during the login process so that the frontend can visit the Headr backend (the `apigateway`) on the user's behalf, without being denied of access.
 
-## Conclusion
+# Conclusion
 
 And that is a coarse and brief introduction to the Headr architeture. There will be more components, but I guess what exists now will exists for at least a while. There will be more posts on details, too. Only when I am not that lazy. See you soon.
