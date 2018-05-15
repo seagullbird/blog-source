@@ -1,18 +1,20 @@
 # Site settings
-baseurl = "https://seagullbird.github.io/"
+baseurl = "https://seagullbird.xyz/"
 languageCode = "en"
 title = "seagullbird"
 theme = "hugo-theme-cactus-plus"
 googleAnalytics = "your_google_analytics_id"
 # Set the value to true if your site include CJK (Chinese, Japanese, and Korean languages) characters
 hasCJKLanguage = true
+enableRobotsTXT = true
+canonifyURLs = true
 
 [params]
 	author = "seagullbird"
 	description = ""
 	bio = "Don't bug me."
 
-	enableRSS = false
+	enableRSS = true
 	enableToc = true
 
 	enableDisqus = false
@@ -25,9 +27,6 @@ hasCJKLanguage = true
 
 
 	enableGoogleAnalytics = true
-	enableBaiduAnalytics = false
-	# Set the value to your baidu analysis code if you want to use baidu analytics
-	baiduAnalytics = 'your_baidu_analysis_code'
 
 	enableTwitterCard = false
 	# The url for twitter card image, default is avatar.png in static/images directory
@@ -68,6 +67,8 @@ hasCJKLanguage = true
   # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
   socialIconStyle = ""
 
+[permalinks]
+  post = "/:year/:month/:title/"
 
 # Add additional social link entries underneath
 [social]
