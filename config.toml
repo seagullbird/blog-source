@@ -73,3 +73,4 @@ canonifyURLs = true
 # Add additional social link entries underneath
 [social]
 	github-square = "https://www.github.com/seagullbird"
+	linkedin-square = "https://www.linkedin.com/in/qingyuch"
