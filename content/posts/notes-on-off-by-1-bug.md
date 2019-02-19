@@ -1,6 +1,6 @@
 ---
 title: "Notes on Off-By-One Bug"
-date: 2019-02-19T17:24:09-0500
+date: 2019-02-19T17:30:05-05:00
 draft: false
 tags: ["Security"]
 ---
