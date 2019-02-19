@@ -5,9 +5,11 @@ draft: false
 tags: ["Security"]
 ---
 
-It is common sense that unsafe C library functions such as `strcpy`, `strcat`, `gets` and `scanf` may lead to buffer overflow attacks due to lack of boundary checks. There're "safe" versions of these functions such as `strncat` and `strncpy`. However, "safe" here is somehow misleading because there's also problem here, namely the "off-by-1" bug.
+"Safe" version of `strcat` isn't as safe as you think.
 
 <!--more-->
+
+It is common sense that unsafe C library functions such as `strcpy`, `strcat`, `gets` and `scanf` may lead to buffer overflow attacks due to lack of boundary checks. There're "safe" versions of these functions such as `strncat` and `strncpy`. However, "safe" here is somehow misleading because there's also problem here, namely the "off-by-1" bug.
 
 ## Intro
 
