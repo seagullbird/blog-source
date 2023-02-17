@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "https://seagullbird.xyz/"
+baseurl = "https://elegant-shockley-b4fc45.netlify.app/"
 languageCode = "en"
 title = "seagullbird"
 theme = "hugo-theme-cactus-plus"
